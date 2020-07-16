@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Course from "./Course";
-import { Link } from "react-router-dom";
+import { Link, Route } from "react-router-dom";
 
 class Courses extends Component {
   state = {
@@ -18,7 +18,7 @@ class Courses extends Component {
         <Link
           key={course.id}
           to={{
-            pathname: this.props.match.url + course.id,
+            pathname: this.props.match.url + "/" + course.id,
             search: "?title=" + course.title
           }}
         >
@@ -30,7 +30,9 @@ class Courses extends Component {
     return (
       <div>
         <h1>Amazing Courses</h1>
-        {posts}
+        <section>{posts}</section>
+        {/* <Route path="/courses/:courseId" component={Course} /> It can stay as it is but I will use more dynamic way */}
+        <Route path={this.props.match.url + "/:courseId"} component={Course} />
       </div>
     );
   }

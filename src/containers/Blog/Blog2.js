@@ -11,16 +11,16 @@ class Blog2 extends Component {
         <nav>
           <ul style={{ listStyle: "none", margin: "auto", padding: "0" }}>
             <li style={{ margin: "10px", display: "inline-block" }}>
-              <NavLink to="/courses/">Courses</NavLink>
+              <NavLink to="/courses">Courses</NavLink>
             </li>
             <li style={{ margin: "10px", display: "inline-block" }}>
-              <NavLink to="/users/">Users</NavLink>
+              <NavLink to="/users">Users</NavLink>
             </li>
           </ul>
         </nav>
         <Switch>
           <Route path="/users" component={Users} />
-          <Route path="/courses/:courseId" component={Course} />
+          {/* <Route path="/courses/:courseId" component={Course} /> */}
           <Route path="/courses" component={Courses} />
         </Switch>
       </div>
